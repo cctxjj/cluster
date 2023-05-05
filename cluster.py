@@ -47,13 +47,6 @@ class Predictor:
 
         return var / len(prediction)
 
-    @staticmethod
-    def getVariation(group1: list, group2: list):
-        variation = 0
-        for item in group1:
-            if group2.count(item) == 0:
-                variation += 1
-        return variation / len(group1)
 
     def predict(self, data):
         return self.cluster.predict(data)
