@@ -13,7 +13,14 @@ def some_function():
     cluster = KMeans(n_clusters = 3)
     cluster.fit(iris_data_train)
     prediction = cluster.predict(iris_data_test)
-    return prediction
+    groups = [[], [], []]
+
+    count = 0
+    for item in prediction:
+        # check if prediction is accurate
+        groups[item].append(iris_data_test[count])
+        count += 1
+
 
 
 print(some_function())
